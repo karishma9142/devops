@@ -10,8 +10,12 @@ COPY ./package.json ./package.json
 
 COPY ./apps/backend ./apps/backend
 
+ARG DATABASE_URL
+ENV DATABASE_URL=$DATABASE_URL
+
 RUN bun install
 RUN bun run db:generate
+RUN bun run build
 
 EXPOSE 8080
 
