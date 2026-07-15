@@ -16,3 +16,5 @@ export default async function Home() {
     </pre>
   );
 }
+
+export const dynamic='force-dynamic'
